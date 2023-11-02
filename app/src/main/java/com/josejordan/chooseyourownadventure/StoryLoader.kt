@@ -1,27 +1,20 @@
 package com.josejordan.chooseyourownadventure
 
-// StoryLoader.kt
 import android.content.Context
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
-fun loadStoryFromJson(context: Context): List<Page> {
-    val json: String = try {
-        context.assets.open("story.json").bufferedReader().use { it.readText() }
-    } catch (ioException: IOException) {
-        ioException.printStackTrace()
-        return emptyList()
-    }
-
-    val listType = object : TypeToken<List<Page>>() {}.type
-    return Gson().fromJson(json, listType)
-}
-
-class StoryLoader {
-    companion object {
-        fun loadStory(context: Context): List<Page> {
-            return loadStoryFromJson(context)
-        }
+// Esta función ahora devuelve un List<Page>? que puede ser nulo si falla la carga.
+fun loadStory(context: Context): List<Page>? {
+    return try {
+        val jsonString = context.assets.open("story1.json").bufferedReader().use { it.readText() }
+        val listType = object : TypeToken<List<Page>>() {}.type
+        Gson().fromJson(jsonString, listType)
+    } catch (e: IOException) {
+        // Log the error to the console
+        Log.e("loadStory", "Error loading story from JSON", e)
+        null
     }
 }
