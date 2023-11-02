@@ -18,12 +18,72 @@ data class Choice(
 )
 
 
+// MainActivity.kt
 class MainActivity : AppCompatActivity() {
 
     private lateinit var storyText: TextView
     private lateinit var choice1Button: Button
     private lateinit var choice2Button: Button
+    private lateinit var storyManager: StoryManager
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        storyText = findViewById(R.id.storyText)
+        choice1Button = findViewById(R.id.choice1Button)
+        choice2Button = findViewById(R.id.choice2Button)
+
+        // Cargar la historia usando StoryLoader
+        val pages = StoryLoader.loadStory(this)
+        storyManager = StoryManager(pages)
+
+        updatePage()
+
+        choice1Button.setOnClickListener {
+            onChoiceMade(0)
+        }
+
+        choice2Button.setOnClickListener {
+            onChoiceMade(1)
+        }
+    }
+
+    private fun updatePage() {
+        val currentPage = storyManager.currentPage
+        storyText.text = currentPage.text
+        when (currentPage.choices.size) {
+            1 -> {
+                choice1Button.text = currentPage.choices[0].text
+                choice2Button.visibility = View.GONE
+            }
+            2 -> {
+                choice1Button.text = currentPage.choices[0].text
+                choice2Button.text = currentPage.choices[1].text
+                choice2Button.visibility = View.VISIBLE
+            }
+            else -> {
+                choice1Button.visibility = View.GONE
+                choice2Button.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun onChoiceMade(choiceIndex: Int) {
+        val nextPageId = storyManager.currentPage.choices.getOrNull(choiceIndex)?.nextPageId
+        nextPageId?.let {
+            storyManager.goToPage(it)
+            updatePage()
+        }
+    }
+}
+
+
+/*class MainActivity : AppCompatActivity() {
+
+    private lateinit var storyText: TextView
+    private lateinit var choice1Button: Button
+    private lateinit var choice2Button: Button
     private val pages = listOf(
         Page(
             0,
@@ -91,10 +151,6 @@ class MainActivity : AppCompatActivity() {
             Choice("Volver a empezar", 0)
         ))
     )
-
-
-
-
     private var currentPage: Page? = pages[0]
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -140,26 +196,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+}*/
 
-
-    /*        private fun updatePage() {
-                storyText.text = currentPage?.text
-                choice1Button.text = currentPage?.choices?.get(0)?.text
-                choice2Button.text = currentPage?.choices?.get(1)?.text
-            }*/
-
-/*    private fun updatePage() {
-        storyText.text = currentPage?.text
-
-        // Primera opción siempre presente
-        choice1Button.text = currentPage?.choices?.getOrNull(0)?.text
-        choice1Button.visibility =
-            if (currentPage?.choices?.getOrNull(0) != null) View.VISIBLE else View.GONE
-
-        // Segunda opción puede o no estar
-        choice2Button.text = currentPage?.choices?.getOrNull(1)?.text
-        choice2Button.visibility =
-            if (currentPage?.choices?.getOrNull(1) != null) View.VISIBLE else View.GONE
-    }*/
-
-}
