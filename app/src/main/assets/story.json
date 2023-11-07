@@ -1,0 +1,130 @@
+[
+  {
+    "id": 0,
+    "text": "Estás en una encrucijada en un bosque oscuro. ¿Vas a la izquierda hacia una cabaña o a la derecha hacia un río?",
+    "choices": [
+      {"text": "Izquierda (Cabaña)", "nextPageId": 1},
+      {"text": "Derecha (Río)", "nextPageId": 2}
+    ]
+  },
+  {
+    "id": 1,
+    "text": "Llegas a una cabaña. ¿Decides entrar o seguir adelante?",
+    "choices": [
+      {"text": "Entrar", "nextPageId": 3},
+      {"text": "Seguir", "nextPageId": 4}
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Te encuentras con un río. ¿Decides cruzarlo o seguir su curso?",
+    "choices": [
+      {"text": "Cruzar", "nextPageId": 5},
+      {"text": "Seguir curso", "nextPageId": 6}
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Dentro de la cabaña, encuentras a un anciano que te ofrece una misión. ¿La aceptas?",
+    "choices": [
+      {"text": "Acepto", "nextPageId": 7},
+      {"text": "Rechazar", "nextPageId": 8}
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Llegas a un claro con un campamento abandonado. ¿Decides investigar o seguir tu camino?",
+    "choices": [
+      {"text": "Investigar", "nextPageId": 9},
+      {"text": "Seguir camino", "nextPageId": 10}
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Encuentras un castillo tras cruzar el río. ¿Deseas explorarlo o prefieres regresar?",
+    "choices": [
+      {"text": "Explorar", "nextPageId": 11},
+      {"text": "Regresar", "nextPageId": 12}
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Llegas a una cascada. ¿Te atreves a nadar o prefieres tomar un descanso?",
+    "choices": [
+      {"text": "Nadar", "nextPageId": 13},
+      {"text": "Descansar", "nextPageId": 14}
+    ]
+  },
+  {
+    "id": 7,
+    "text": "El anciano te cuenta sobre un antiguo tesoro escondido en una cueva detrás de la cascada. ¿Decides buscarlo o ignorar la historia?",
+    "choices": [
+      {"text": "Buscar tesoro", "nextPageId": 15},
+      {"text": "Ignorar", "nextPageId": 16}
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Tras rechazar la oferta del anciano, te das cuenta de que no te sientes bien y decides descansar un rato en la cabaña. Al despertar, notas que algo ha cambiado en el bosque. ¿Quieres investigar o escapar de la cabaña?",
+    "choices": [
+      {"text": "Investigar", "nextPageId": 9},
+      {"text": "Escapar", "nextPageId": 10}
+    ]
+  },
+  {
+    "id": 9,
+    "text": "Sigues las indicaciones del anciano y después de superar varios desafíos, finalmente encuentras el tesoro escondido. ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Decides no involucrarte y abandonas el lugar. Sigues tu camino sin mirar atrás. ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Investigando el castillo, descubres indicios de otro tesoro pero no logras encontrarlo. ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  },
+  {
+    "id": 12,
+    "text": "Sigues tu camino, el bosque se torna más denso y oscuro. Finalmente, encuentras una salida y regresas a casa. ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Siguiendo las indicaciones del anciano, encuentras una cueva oculta detrás de la cascada. En su interior, descubres un cofre lleno de oro y joyas. ¡Has encontrado el tesoro perdido! ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  },
+  {
+    "id": 14,
+    "text": "Decides descansar y mientras lo haces, reflexionas sobre las aventuras que podrías haber vivido. ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  },
+  {
+    "id": 15,
+    "text": "Siguiendo las indicaciones del anciano, llegas a la cueva detrás de la cascada. Después de una búsqueda exhaustiva, encuentras el tesoro escondido. ¡Te has vuelto rico! ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  },
+  {
+    "id": 16,
+    "text": "Decides que el tesoro no vale el riesgo y decides regresar a tu aldea. La gente te recibe con alegría y te das cuenta de que el verdadero tesoro es estar en casa. ¡Fin!",
+    "choices": [
+      {"text": "Volver a empezar", "nextPageId": 0}
+    ]
+  }
+]

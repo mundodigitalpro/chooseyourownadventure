@@ -1,0 +1,180 @@
+﻿[
+  {
+    "id": 0,
+    "text": "Te encuentras en un bosque encantado, donde todo parece brillar con luz propia. ¿Qué haces?",
+    "choices": [
+      {
+        "text": "Explorar el bosque.",
+        "nextPageId": 1
+      },
+      {
+        "text": "Buscar un camino para salir.",
+        "nextPageId": 2
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "text": "Mientras exploras, encuentras una cueva misteriosa. ¿Entrarías?",
+    "choices": [
+      {
+        "text": "Entrar a la cueva.",
+        "nextPageId": 3
+      },
+      {
+        "text": "Continuar explorando el bosque.",
+        "nextPageId": 4
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Buscando una salida, te encuentras con un ser mágico que te ofrece ayudar si resuelves su acertijo. ¿Aceptas?",
+    "choices": [
+      {
+        "text": "Aceptar el desafío.",
+        "nextPageId": 5
+      },
+      {
+        "text": "Declinar y seguir buscando una salida.",
+        "nextPageId": 6
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Dentro de la cueva, encuentras un tesoro pero también una criatura durmiendo. ¿Qué haces?",
+    "choices": [
+      {
+        "text": "Tomar el tesoro y escapar.",
+        "nextPageId": 7
+      },
+      {
+        "text": "Dejar el tesoro y salir de la cueva.",
+        "nextPageId": 8
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Sigues explorando y encuentras una aldea de seres mágicos. Te ofrecen quedarte. ¿Aceptas?",
+    "choices": [
+      {
+        "text": "Quedarte en la aldea.",
+        "nextPageId": 9
+      },
+      {
+        "text": "Continuar explorando.",
+        "nextPageId": 10
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Resuelves el acertijo y el ser mágico te muestra una salida. Te encuentras en un nuevo mundo. ¿Exploras?",
+    "choices": [
+      {
+        "text": "Explorar el nuevo mundo.",
+        "nextPageId": 11
+      },
+      {
+        "text": "Buscar una forma de regresar.",
+        "nextPageId": 12
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Sigues buscando una salida y te encuentras con una bruja que te ofrece un mapa. ¿Lo tomas?",
+    "choices": [
+      {
+        "text": "Tomar el mapa.",
+        "nextPageId": 13
+      },
+      {
+        "text": "Rechazar el mapa y continuar por tu cuenta.",
+        "nextPageId": 14
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "Escapas con el tesoro y vives aventuras increíbles, aunque siempre con el temor de que la criatura te encuentre.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Sales de la cueva y encuentras un grupo de aventureros. Juntos, descubren la salida del bosque.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "text": "Decides quedarte en la aldea y vives feliz rodeado de magia y nuevos amigos.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Continuas explorando y cada día descubres maravillas nuevas en el bosque encantado.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Explorando el nuevo mundo, encuentras amigos y vives aventuras inolvidables.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "text": "Buscando una forma de regresar, descubres que el ser mágico te engañó, pero decides construir una nueva vida aquí.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Con el mapa, encuentras una salida y regresas a tu mundo, pero con historias increíbles que contar.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "text": "Después de muchos días, encuentras una salida por tu cuenta y regresas a casa con una sensación de logro.",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  }
+]
