@@ -9,7 +9,7 @@ import java.io.IOException
 // Esta función ahora devuelve un List<Page>? que puede ser nulo si falla la carga.
 fun loadStory(context: Context): List<Page>? {
     return try {
-        val jsonString = context.assets.open("story3.json").bufferedReader().use { it.readText() }
+        val jsonString = context.assets.open("story5.json").bufferedReader().use { it.readText() }
         val listType = object : TypeToken<List<Page>>() {}.type
         Gson().fromJson(jsonString, listType)
     } catch (e: IOException) {

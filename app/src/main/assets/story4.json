@@ -1,0 +1,47 @@
+﻿[
+  {
+    "id": 0,
+    "text": "Te encuentras en un cruce de caminos en un bosque encantado.",
+    "image": "bosque",
+    "choices": [
+      {
+        "text": "Toma el camino de la izquierda",
+        "nextPageId": 1
+      },
+      {
+        "text": "Toma el camino de la derecha",
+        "nextPageId": 2
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "text": "El camino de la izquierda te lleva a una cueva oscura.",
+    "image": "cueva",
+    "choices": [
+      {
+        "text": "Explora la cueva",
+        "nextPageId": 0
+      },
+      {
+        "text": "Regresa al cruce de caminos",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "El camino de la derecha te lleva a un lago misterioso.",
+    "image": "lago",
+    "choices": [
+      {
+        "text": "Nada en el lago",
+        "nextPageId": 0
+      },
+      {
+        "text": "Sigue el camino alrededor del lago",
+        "nextPageId": 0
+      }
+    ]
+  }
+]

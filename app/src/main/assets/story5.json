@@ -1,0 +1,204 @@
+﻿[
+  {
+    "id": 0,
+    "text": "Te encuentras en un cruce de caminos en un bosque encantado.",
+    "image": "bosque",
+    "choices": [
+      {
+        "text": "Toma el camino de la izquierda",
+        "nextPageId": 1
+      },
+      {
+        "text": "Toma el camino de la derecha",
+        "nextPageId": 2
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "text": "El camino de la izquierda te lleva a una cueva oscura.",
+    "image": "cueva",
+    "choices": [
+      {
+        "text": "Explora la cueva",
+        "nextPageId": 3
+      },
+      {
+        "text": "Regresa al cruce de caminos",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "El camino de la derecha te lleva a un lago misterioso.",
+    "image": "lago",
+    "choices": [
+      {
+        "text": "Nada en el lago",
+        "nextPageId": 4
+      },
+      {
+        "text": "Sigue el camino alrededor del lago",
+        "nextPageId": 5
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "Dentro de la cueva encuentras un tesoro escondido.",
+    "image": "tesoro",
+    "choices": [
+      {
+        "text": "Toma el tesoro",
+        "nextPageId": 6
+      },
+      {
+        "text": "Investiga más a fondo en la cueva",
+        "nextPageId": 7
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Mientras nadas, encuentras una ciudad sumergida.",
+    "image": "ciudad",
+    "choices": [
+      {
+        "text": "Bucea para explorar la ciudad",
+        "nextPageId": 8
+      },
+      {
+        "text": "Regresa a la orilla",
+        "nextPageId": 2
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "Siguiendo el camino descubres una cabaña antigua.",
+    "image": "cabana",
+    "choices": [
+      {
+        "text": "Entra en la cabaña",
+        "nextPageId": 9
+      },
+      {
+        "text": "Continúa tu camino",
+        "nextPageId": 10
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "El tesoro está maldito y te transformas en piedra.",
+    "image": "piedra",
+    "choices": [
+      {
+        "text": "Volver a empezar",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "Encuentras una salida secreta de la cueva que te lleva a un nuevo destino.",
+    "image": "salida",
+    "choices": [
+      {
+        "text": "Usa la salida secreta",
+        "nextPageId": 10
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Exploras las ruinas y descubres la historia de una civilización perdida.",
+    "image": "civilizacion",
+    "choices": [
+      {
+        "text": "Toma uno de los artefactos antiguos",
+        "nextPageId": 11
+      },
+      {
+        "text": "Sal de la ciudad sumergida",
+        "nextPageId": 4
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "text": "La cabaña está llena de mapas y objetos mágicos.",
+    "image": "objetos",
+    "choices": [
+      {
+        "text": "Estudia los mapas",
+        "nextPageId": 12
+      },
+      {
+        "text": "Toma un objeto mágico",
+        "nextPageId": 13
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "text": "Continúa tu camino.",
+    "image": "camino",
+    "choices": [
+      {
+        "text": "Opcion 1",
+        "nextPageId": 0
+      },
+      {
+        "text": "Opcion 2",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "text": "Toma uno de los artefactos antiguos",
+    "image": "objetos",
+    "choices": [
+      {
+        "text": "Opcion 1",
+        "nextPageId": 0
+      },
+      {
+        "text": "Opcion 2",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "text": "Estudia los mapas",
+    "image": "mapas",
+    "choices": [
+      {
+        "text": "Opcion 1",
+        "nextPageId": 0
+      },
+      {
+        "text": "Opcion 2",
+        "nextPageId": 0
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Toma un objeto mágico",
+    "image": "magico",
+    "choices": [
+      {
+        "text": "Opcion 1",
+        "nextPageId": 0
+      },
+      {
+        "text": "Opcion 2",
+        "nextPageId": 0
+      }
+    ]
+  }
+]

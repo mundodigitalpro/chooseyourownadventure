@@ -2,17 +2,19 @@ package com.josejordan.chooseyourownadventure
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 data class Page(
     val id: Int,
     val text: String,
-    val choices: List<Choice>
+    val choices: List<Choice>,
+    val image: String
 )
 
 data class Choice(
@@ -66,6 +68,22 @@ class MainActivity : AppCompatActivity() {
             onChoiceMade(1)
         }
     }
+
+    fun TextView.typeWriterText(text: String, delay: Long = 50L) {
+        val handler = Handler(Looper.getMainLooper())
+        this.text = ""
+        text.forEachIndexed { index, c ->
+            handler.postDelayed({
+                this.text = text.substring(0, index + 1)
+            }, index * delay)
+        }
+    }
+
+    fun TextView.clearTypeWriter() {
+        this.text = ""
+    }
+
+
     private fun showInvalidStoryDialog() {
         AlertDialog.Builder(this).apply {
             setTitle("Invalid Story")
@@ -92,16 +110,32 @@ class MainActivity : AppCompatActivity() {
 
     private fun updatePage() {
         val currentPage = storyManager.currentPage
-        storyText.text = currentPage.text
+        //storyText.text = currentPage.text
+
+        // Aplica el efecto de escritura al texto de la historia
+        storyText.typeWriterText(currentPage.text)
+
+        // Cargar la imagen para la página actual
+        val imageResId = resources.getIdentifier(currentPage.image, "drawable", packageName)
+        if (imageResId != 0) { // El recurso existe
+            mainImage.setImageResource(imageResId)
+        } else {
+            // Opcional: Poner una imagen predeterminada si no se encuentra la imagen de la página
+            mainImage.setImageResource(R.drawable.aventure_title) // Asegúrate de tener una imagen 'default_image' en tus recursos
+        }
+
+        // Configurar la visibilidad y el texto de los botones basado en las elecciones disponibles
         when (currentPage.choices.size) {
             1 -> {
                 choice1Button.text = currentPage.choices[0].text
+                choice1Button.visibility = View.VISIBLE
                 choice2Button.visibility = View.GONE
             }
 
             2 -> {
                 choice1Button.text = currentPage.choices[0].text
                 choice2Button.text = currentPage.choices[1].text
+                choice1Button.visibility = View.VISIBLE
                 choice2Button.visibility = View.VISIBLE
             }
 
@@ -111,6 +145,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun onChoiceMade(choiceIndex: Int) {
         val nextPageId = storyManager.currentPage.choices.getOrNull(choiceIndex)?.nextPageId
