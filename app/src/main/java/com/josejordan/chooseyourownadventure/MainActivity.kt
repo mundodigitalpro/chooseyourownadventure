@@ -9,6 +9,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 data class Page(
     val id: Int,
@@ -31,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var choice2Button: Button
     private lateinit var storyManager: StoryManager
     private lateinit var mainImage: ImageView
+    private var typeWriterJob: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun TextView.typeWriterText(text: String, delay: Long = 50L) {
+/*    fun TextView.typeWriterText(text: String, delay: Long = 50L) {
         val handler = Handler(Looper.getMainLooper())
         this.text = ""
         text.forEachIndexed { index, c ->
@@ -81,8 +87,28 @@ class MainActivity : AppCompatActivity() {
 
     fun TextView.clearTypeWriter() {
         this.text = ""
+    }*/
+
+
+    fun TextView.typeWriterText(text: String, delay: Long = 50L): Job {
+        this.text = ""
+        return CoroutineScope(Dispatchers.Main).launch {
+            text.forEachIndexed { index, c ->
+                delay(delay)
+                this@typeWriterText.text = text.substring(0, index + 1)
+            }
+        }
     }
 
+
+    private fun startTypeWriter(textView: TextView, text: String) {
+        typeWriterJob?.cancel() // Cancela el trabajo anterior si existe
+        typeWriterJob = textView.typeWriterText(text)
+    }
+
+    private fun stopTypeWriter() {
+        typeWriterJob?.cancel()
+    }
 
     private fun showInvalidStoryDialog() {
         AlertDialog.Builder(this).apply {
@@ -113,7 +139,9 @@ class MainActivity : AppCompatActivity() {
         //storyText.text = currentPage.text
 
         // Aplica el efecto de escritura al texto de la historia
-        storyText.typeWriterText(currentPage.text)
+        //storyText.typeWriterText(currentPage.text)
+
+        startTypeWriter(storyText, currentPage.text)
 
         // Cargar la imagen para la página actual
         val imageResId = resources.getIdentifier(currentPage.image, "drawable", packageName)
@@ -169,5 +197,10 @@ class MainActivity : AppCompatActivity() {
         val alert = dialogBuilder.create()
         alert.setTitle("Error de Navegación")
         alert.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopTypeWriter() // Detiene la animación del texto cuando la actividad se destruye
     }
 }
